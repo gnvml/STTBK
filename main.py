@@ -53,12 +53,12 @@ while (video_capture.isOpened()):
                 cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
-#                if name not in list_name:
-#                    list_name.append(name)
-#                count = len(list_name)
-#                if count > 2:
-#                    r = requests.post("https://game12-258412.appspot.com/person", data={"number":count})
-#                    print(r.status_code, r.reason)
+                if name not in list_name:
+                    list_name.append(name)
+                count = len(list_name)
+                if count > 2:
+                    r = requests.post("https://game12-258412.appspot.com/person", data={"number":count})
+                    print(r.status_code, r.reason)
         # if count % 5 == 0:
         #     process_this_frame = not process_this_frame
 
